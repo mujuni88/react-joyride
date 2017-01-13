@@ -351,7 +351,7 @@ class Joyride extends React.Component {
         cb: listeners.tooltips[key].cb,
         key
       }))
-      .filter(({ el }) => (typeof el !== 'undefined'))
+      .filter(({ el }) => !!el)
       .forEach(({ el, event, cb, key }) => {
         el.removeEventListener(event, cb);
         delete listeners.tooltips[key];
